@@ -1,8 +1,8 @@
 terraform {
   backend "remote" {
-    organization = "Diehlabs"
+    organization = "Bebetter"
     workspaces {
-      name = "k8sauto-aks-tgo"
+      name = "aksauto"
     }
   }
 }
