@@ -31,6 +31,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
   resource_group_name = var.resource_group.name
   kubernetes_version  = var.kubernetes_version_number
   dns_prefix          = var.dns_prefix
+  http_application_routing_enabled = False
   #private_cluster_enabled = var.private_cluster_enabled
   #private_dns_zone_id     = var.private_dns_zone_id
 
@@ -58,11 +59,6 @@ resource "azurerm_kubernetes_cluster" "aks" {
     }
   }
 
-  addon_profile {
-    http_application_routing {
-      enabled = false
-    }
-  }
 
   # verify that these items are needed, we think they are, possibly srd requirement
   network_profile {
